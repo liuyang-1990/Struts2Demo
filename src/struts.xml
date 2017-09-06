@@ -4,10 +4,14 @@
     "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
 	<constant name="struts.devMode" value="true" />
-	<package name="struts" extends="struts-default">
-		<action name="helloworld" class="com.struts.HelloWorldAction">
+	<default-action-ref name="index"></default-action-ref>
+		<global-allowed-methods>regex:.*</global-allowed-methods>
+		<action name="helloworld_*" class="com.struts.HelloWorldAction" method="{1}">
 			<result>/success.jsp</result>
+			<result name="{1}">/{1}.jsp</result>
 		</action>
-	</package>
+		<action name="index">
+		  <result>/error.jsp</result>
+		</action>
 
 </struts>
