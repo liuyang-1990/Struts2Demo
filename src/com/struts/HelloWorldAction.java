@@ -14,11 +14,17 @@ public class HelloWorldAction extends ActionSupport {
 	 */
 	@Override
 	public String execute() throws Exception {
-		   System.out.println("÷¥––¡Àaction");
+		   System.out.println("√ñ¬¥√ê√ê√Å√ãaction");
 		   
 		   return SUCCESS;
 	}
 
-	
+	 public String add(){
+		 return "add";
+	 }
+	 
+	 public String update(){
+		 return "update";
+	 }
 	  
 }
